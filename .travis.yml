@@ -9,4 +9,4 @@ git:
   depth: false
 script:
   - pip install -r requirements.txt
-  - pytest --cov-report term-missing --cov app -v
+  - pytest 
