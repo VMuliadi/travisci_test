@@ -1,6 +1,12 @@
 language: python
+python:
+  - "2.7"
+branches:
+  only:
+    - master
+    - production
+git:
+  depth: false
 script:
   - pip install -r requirements.txt
-env:
-  global:
-    aws_access_key_id: AKIAI4GTZYSI2K4DLJQQ
+  - pytest --cov-report term-missing --cov app -v
