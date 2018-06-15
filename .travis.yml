@@ -8,5 +8,4 @@ branches:
 git:
   depth: false
 script:
-  - pip install -r requirements.txt
   - pytest 
