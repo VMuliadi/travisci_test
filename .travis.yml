@@ -1,5 +1,5 @@
 language: python
-distro: bionic
+dist: bionic
 os: linux
 python:
   - "2.7"
