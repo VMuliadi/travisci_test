@@ -52,5 +52,3 @@ def get_download_link(links):
 		download_links_details['links'] = khinsider_scrape.findAll('a', {'style':'color: #21363f;'})[0].get('href')
 		download_links.append(download_links_details)
 	return json.dumps(download_links, sort_keys=True)
-
-print(get_download_link('https://downloads.khinsider.com/game-soundtracks/album/flappy-golf-1-mobile'))

@@ -1,6 +1,10 @@
 language: python
+distro: bionic
+os: linux
 python:
   - "2.7"
+virtualenv:
+  system_site_packages: true
 branches:
   only:
     - master
