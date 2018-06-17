@@ -33,7 +33,7 @@ def get_track_info(links):
 def get_download_link(links):
 	list_of_download_link = []
 	base_url = 'https://downloads.khinsider.com'
-	khinsider_request = requests.get(links)
+	khinsider_request = requests.get(links, verify=False)
 	khinsider_scrape = BeautifulSoup(khinsider_request.text, 'html.parser')
 	for index, track_info in enumerate(khinsider_scrape.findAll('table', {'id':'songlist'})[0].findAll('tr')):
 		if index > 0:
@@ -45,7 +45,7 @@ def get_download_link(links):
 	download_links = []
 	for index,links in enumerate(list_of_download_link):
 		download_links_details = {}
-		khinsider_request = requests.get(links)
+		khinsider_request = requests.get(links, verify=False)
 		khinsider_scrape = BeautifulSoup(khinsider_request.text, 'html.parser')
 		download_links_details['track_number'] = index+1
 		download_links_details['filename'] = khinsider_scrape.findAll('p', {'align':'left'})[-1].findAll('b')[-1].get_text()
